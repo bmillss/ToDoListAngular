@@ -1,0 +1,22 @@
+    <h2>To do list:</h2>
+    <table class ="table">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+    <ng-container *ngFor="let myitem of todolist">
+        <tr>
+            <td>{{myitem.task}}<br><div *ngIF="myitem.Completed; else dothis"></div>
+                <ng-template #dothis>
+                    <button (click)="completeTask()">Complete</button>
+                </ng-template>
+            </td>
+        </tr>
+    </ng-container> 
+    <input type="text" [(ngModel)]="newtask"/>
+    <button (click)="addTask()">Create Task</button>
+</tbody>
+</table>
