@@ -9,11 +9,12 @@
         <tbody>
     <ng-container *ngFor="let myitem of todolist">
         <tr>
-            <td>{{myitem.task}}<br><div *ngIF="myitem.Completed; else dothis"></div>
+            <td>{{myitem.task}}</td>
+            <td *ngIf="myitem.completed; else dothis"></td>
                 <ng-template #dothis>
-                    <button (click)="completeTask()">Complete</button>
+                    <button (click)="completeTask(myitem)">Complete</button>
                 </ng-template>
-            </td>
+                <td><button (click)="DeleteTask(myitem)">Delete</button></td>
         </tr>
     </ng-container> 
     <input type="text" [(ngModel)]="newtask"/>

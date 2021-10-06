@@ -26,9 +26,13 @@ export class TodoListComponent implements OnInit {
     this.newtask = '';
     this.newcompleted;
   }
-  completeTask()
+  completeTask(myitem:ToDo)
   {
-    this.todolist.push({task:this.newtask, completed: true})
+    myitem.completed = true;
+  }
+  DeleteTask(myitem:ToDo)
+  {
+    this.todolist.splice;
   }
 
 }
