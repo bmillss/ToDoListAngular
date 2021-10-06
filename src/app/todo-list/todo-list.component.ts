@@ -32,6 +32,7 @@ export class TodoListComponent implements OnInit {
   }
   DeleteTask(myitem:ToDo)
   {
+    //sad that myitem.splice didn't work probably due to the incorrect type being used
     this.todolist.splice;
   }
 
